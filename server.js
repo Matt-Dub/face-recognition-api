@@ -23,7 +23,10 @@ const app = express();
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://smart-brain-sf-22c427260d07.herokuapp.com/',
+  credentials: true
+}));
 
 app.get('/', (req, res) => { res.json('Connected...'); })
 app.post('/signing', (req, res) => { handleSignin(req, res, DB, bcrypt) }); // Other syntax
