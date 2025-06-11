@@ -24,9 +24,6 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use(cors());
-var corsOptions = {
-  origin: 'http://localhost:5173',
-}
 
 app.get('/', (req, res) => { res.json('Connected...'); })
 app.post('/signing', (req, res) => { handleSignin(req, res, DB, bcrypt) }); // Other syntax
