@@ -25,7 +25,7 @@ app.use(express.json());
 
 app.use(cors());
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: 'https://smart-brain-matt-a49e9a00f103.herokuapp.com/',
   methods: 'GET,POST, PUT',
   credentials: true
 }));
