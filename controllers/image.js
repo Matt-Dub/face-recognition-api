@@ -14,7 +14,7 @@ export const handleImage = (req, res, DB) => {
 }
 
 export const handleApiCall = (req, res) => {
-  const PAT = '79e9789fe0d44d42910ad0b723aed2f1';
+  const PAT = process.env.CLAIRIFAI_API;
   console.log(PAT);
     res.json(PAT)
 }
