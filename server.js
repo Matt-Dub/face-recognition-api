@@ -2,11 +2,14 @@ import express from 'express';
 import bcrypt from 'bcrypt';
 import cors from 'cors';
 import knex from 'knex';
+import dotenv from 'dotenv';
 
 import { handleSignin } from './controllers/signin.mjs';
 import {handleRegister} from './controllers/register.mjs';
 import profile from './controllers/profile.js';
 import { handleImage, handleApiCall } from './controllers/image.js';
+
+dotenv.config();
 
 const DB = knex({
   client: 'pg',
