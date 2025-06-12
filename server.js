@@ -24,11 +24,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(express.json());
 
 app.use(cors());
-// app.use(cors({
-//   origin: 'https://smart-brain-sf-22c427260d07.herokuapp.com/',
-//   methods: 'GET,POST, PUT',
-//   credentials: true
-// }));
+app.use(cors({
+  origin: 'http://localhost:5173/',
+  methods: 'GET,POST, PUT',
+  credentials: true
+}));
 
 app.get('/', (req, res) => { res.json('Connected...'); })
 app.post('/signing', (req, res) => { handleSignin(req, res, DB, bcrypt) }); // Other syntax
